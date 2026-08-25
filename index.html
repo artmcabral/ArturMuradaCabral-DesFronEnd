@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas Acadêmicas</title>
 </head>
+
 <body>
 
     <header>
@@ -13,38 +14,45 @@
     </header>
 
     <main>
-        <!-- busca e iltros -->
+
         <section aria-labelledby="titulo-busca">
             <h2 id="titulo-busca">Busca e Filtros</h2>
+
             <form action="">
-                <!-- campo de busca -->
                 <label for="busca-titulo">Buscar por título da tarefa:</label>
                 <input type="text" id="busca-titulo" name="busca">
 
-                <!-- status -->
                 <fieldset>
                     <legend>Filtrar por Status</legend>
+
                     <input type="radio" id="status-todos" name="status" value="todos" checked>
                     <label for="status-todos">Todos</label>
+
                     <input type="radio" id="status-afazer" name="status" value="a_fazer">
                     <label for="status-afazer">A fazer</label>
+
                     <input type="radio" id="status-andamento" name="status" value="em_andamento">
                     <label for="status-andamento">Em andamento</label>
+
                     <input type="radio" id="status-revisao" name="status" value="em_revisao">
                     <label for="status-revisao">Em revisão</label>
+
                     <input type="radio" id="status-concluida" name="status" value="concluida">
                     <label for="status-concluida">Concluída</label>
                 </fieldset>
 
-                <!-- prioridade -->
                 <fieldset>
                     <legend>Filtrar por Prioridade</legend>
+
                     <input type="radio" id="prioridade-todas" name="prioridade" value="todas" checked>
                     <label for="prioridade-todas">Todas</label>
+
                     <input type="radio" id="prioridade-baixa" name="prioridade" value="baixa">
                     <label for="prioridade-baixa">Baixa</label>
+
                     <input type="radio" id="prioridade-media" name="prioridade" value="media">
                     <label for="prioridade-media">Média</label>
+
                     <input type="radio" id="prioridade-alta" name="prioridade" value="alta">
                     <label for="prioridade-alta">Alta</label>
                 </fieldset>
@@ -53,111 +61,118 @@
             </form>
         </section>
 
-        <!-- quadro tarefass -->
         <section aria-labelledby="titulo-quadro">
             <h2 id="titulo-quadro">Quadro de Tarefas</h2>
 
-            <!-- 1 -->
-            <section aria-labelledby="status-afazer">
-                <h3 id="status-afazer">A fazer</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Fichamento </h4>
-                            <p>Projeto: Redes</p>
-                            <p>Responsável: Douglas</p>
-                            <p>Prazo: 20/08/2026</p>
-                            <p>Prioridade: Média</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Modelagem</h4>
-                            <p>Projeto: Biblioteca</p>
-                            <p>Responsável: Madia</p>
-                            <p>Prazo: 25/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                </ul>
-            </section>
+            <div class="quadro-tarefas">
 
-            <!-- 2 -->
-            <section aria-labelledby="status-andamento">
-                <h3 id="status-andamento">Em andamento</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Desenvolvimento</h4>
-                            <p>Projeto:App</p>
-                            <p>Responsável: Art</p>
-                            <p>Prazo: 18/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Software</h4>
-                            <p>Projeto: Interface</p>
-                            <p>Responsável: Cabral</p>
-                            <p>Prazo: 22/08/2026</p>
-                            <p>Prioridade: Baixa</p>
-                        </article>
-                    </li>
-                </ul>
-            </section>
+                <section aria-labelledby="status-afazer">
+                    <h3 id="status-afazer">A fazer</h3>
 
-            <!-- 3 -->
-            <section aria-labelledby="status-revisao">
-                <h3 id="status-revisao">Em revisão</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Revisar artigo</h4>
-                            <p>Projeto: TCC</p>
-                            <p>Responsável: Murada</p>
-                            <p>Prazo: 15/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Testes</h4>
-                            <p>Projeto: Site</p>
-                            <p>Responsável: Artur</p>
-                            <p>Prazo: 16/08/2026</p>
-                            <p>Prioridade: Média</p>
-                        </article>
-                    </li>
-                </ul>
-            </section>
+                    <ul>
+                        <li>
+                            <article>
+                                <h4>Fichamento</h4>
+                                <p>Projeto: Redes</p>
+                                <p>Responsável: Douglas</p>
+                                <p>Prazo: 20/08/2026</p>
+                                <p>Prioridade: Média</p>
+                            </article>
+                        </li>
 
-            <!-- 4 -->
-            <section aria-labelledby="status-concluida">
-                <h3 id="status-concluida">Concluída</h3>
-                <ul>
-                    <li>
-                        <article>
-                            <h4>Requisitos</h4>
-                            <p>Projeto: Clínica</p>
-                            <p>Responsável: Arturzin</p>
-                            <p>Prazo: 05/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <h4>Configuração do repositório Git</h4>
-                            <p>Projeto: Desenvolvimento Frontend</p>
-                            <p>Responsável: Artur Murada Cabral</p>
-                            <p>Prazo: 11/08/2026</p>
-                            <p>Prioridade: Alta</p>
-                        </article>
-                    </li>
-                </ul>
-            </section>
-            
+                        <li>
+                            <article>
+                                <h4>Modelagem</h4>
+                                <p>Projeto: Biblioteca</p>
+                                <p>Responsável: Madia</p>
+                                <p>Prazo: 25/08/2026</p>
+                                <p>Prioridade: Alta</p>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="status-andamento">
+                    <h3 id="status-andamento">Em andamento</h3>
+
+                    <ul>
+                        <li>
+                            <article>
+                                <h4>Desenvolvimento</h4>
+                                <p>Projeto: App</p>
+                                <p>Responsável: Art</p>
+                                <p>Prazo: 18/08/2026</p>
+                                <p>Prioridade: Alta</p>
+                            </article>
+                        </li>
+
+                        <li>
+                            <article>
+                                <h4>Software</h4>
+                                <p>Projeto: Interface</p>
+                                <p>Responsável: Cabral</p>
+                                <p>Prazo: 22/08/2026</p>
+                                <p>Prioridade: Baixa</p>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="status-revisao">
+                    <h3 id="status-revisao">Em revisão</h3>
+
+                    <ul>
+                        <li>
+                            <article>
+                                <h4>Revisar artigo</h4>
+                                <p>Projeto: TCC</p>
+                                <p>Responsável: Murada</p>
+                                <p>Prazo: 15/08/2026</p>
+                                <p>Prioridade: Alta</p>
+                            </article>
+                        </li>
+
+                        <li>
+                            <article>
+                                <h4>Testes</h4>
+                                <p>Projeto: Site</p>
+                                <p>Responsável: Artur</p>
+                                <p>Prazo: 16/08/2026</p>
+                                <p>Prioridade: Média</p>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+                <section aria-labelledby="status-concluida">
+                    <h3 id="status-concluida">Concluída</h3>
+
+                    <ul>
+                        <li>
+                            <article>
+                                <h4>Requisitos</h4>
+                                <p>Projeto: Clínica</p>
+                                <p>Responsável: Arturzin</p>
+                                <p>Prazo: 05/08/2026</p>
+                                <p>Prioridade: Alta</p>
+                            </article>
+                        </li>
+
+                        <li>
+                            <article>
+                                <h4>Configuração do repositório Git</h4>
+                                <p>Projeto: Desenvolvimento Frontend</p>
+                                <p>Responsável: Artur Murada Cabral</p>
+                                <p>Prazo: 11/08/2026</p>
+                                <p>Prioridade: Alta</p>
+                            </article>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
         </section>
+
     </main>
 
     <footer>
