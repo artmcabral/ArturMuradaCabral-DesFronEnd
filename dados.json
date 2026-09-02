@@ -1,0 +1,60 @@
+{
+    "tarefas": [
+        {
+            "id": "1",
+            "titulo": "Estudar Redes de Computadores",
+            "status": "a_fazer",
+            "prioridade": "alta",
+            "prazo": "08/09/2026"
+        },
+        {
+            "id": "2",
+            "titulo": "Finalizar atividade de Banco de Dados",
+            "status": "a_fazer",
+            "prioridade": "media",
+            "prazo": "09/09/2026"
+        },
+        {
+            "id": "3",
+            "titulo": "Desenvolver tela do projeto",
+            "status": "em_andamento",
+            "prioridade": "alta",
+            "prazo": "10/09/2026"
+        },
+        {
+            "id": "4",
+            "titulo": "Organizar código Java",
+            "status": "em_andamento",
+            "prioridade": "baixa",
+            "prazo": "12/09/2026"
+        },
+        {
+            "id": "5",
+            "titulo": "Revisar conteúdo da Aula 06",
+            "status": "em_revisao",
+            "prioridade": "media",
+            "prazo": "13/09/2026"
+        },
+        {
+            "id": "6",
+            "titulo": "Revisar relatório do projeto",
+            "status": "em_revisao",
+            "prioridade": "alta",
+            "prazo": "14/09/2026"
+        },
+        {
+            "id": "7",
+            "titulo": "Entregar atividade da E2",
+            "status": "concluida",
+            "prioridade": "alta",
+            "prazo": "26/08/2026"
+        },
+        {
+            "id": "8",
+            "titulo": "Criar repositório do projeto",
+            "status": "concluida",
+            "prioridade": "baixa",
+            "prazo": "20/08/2026"
+        }
+    ]
+}
