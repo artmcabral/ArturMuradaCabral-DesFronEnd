@@ -24,3 +24,13 @@ export function renderizarEstado(estado, dados) {
         regiaoStatus.textContent = dados;
     }
 }
+
+export const estado = {
+    tarefas: [],
+    busca: "",
+    status: "todos",
+    prioridade: "todas",
+    ordenacao: "prazo-asc",
+    carregamento: "carregando",
+    erro: null
+};
