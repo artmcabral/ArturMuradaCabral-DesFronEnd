@@ -34,3 +34,11 @@ export const estado = {
     carregamento: "carregando",
     erro: null
 };
+
+export function selecionarTarefas(estado) {
+    const termo = estado.busca.trim().toLowerCase();
+
+    return estado.tarefas.filter(tarefa =>
+        tarefa.titulo.toLowerCase().includes(termo)
+    );
+}
