@@ -24,21 +24,3 @@ export function renderizarEstado(estado, dados) {
         regiaoStatus.textContent = dados;
     }
 }
-
-export const estado = {
-    tarefas: [],
-    busca: "",
-    status: "todos",
-    prioridade: "todas",
-    ordenacao: "prazo-asc",
-    carregamento: "carregando",
-    erro: null
-};
-
-export function selecionarTarefas(estado) {
-    const termo = estado.busca.trim().toLowerCase();
-
-    return estado.tarefas.filter(tarefa =>
-        tarefa.titulo.toLowerCase().includes(termo)
-    );
-}

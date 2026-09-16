@@ -2,9 +2,11 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Gerenciador de Tarefas Acadêmicas</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -15,159 +17,93 @@
 
     <main>
 
-        <section aria-labelledby="titulo-busca">
-            <h2 id="titulo-busca">Busca e Filtros</h2>
+        <p data-estado role="status" aria-live="polite"></p>
 
-            <form action="">
-                <label for="busca-titulo">Buscar por título da tarefa:</label>
-                <input type="text" id="busca-titulo" name="busca">
+        <section aria-labelledby="titulo-filtros">
+            <h2 id="titulo-filtros">Buscar e filtrar tarefas</h2>
 
-                <fieldset>
-                    <legend>Filtrar por Status</legend>
-
-                    <input type="radio" id="status-todos" name="status" value="todos" checked>
-                    <label for="status-todos">Todos</label>
-
-                    <input type="radio" id="status-afazer" name="status" value="a_fazer">
-                    <label for="status-afazer">A fazer</label>
-
-                    <input type="radio" id="status-andamento" name="status" value="em_andamento">
-                    <label for="status-andamento">Em andamento</label>
-
-                    <input type="radio" id="status-revisao" name="status" value="em_revisao">
-                    <label for="status-revisao">Em revisão</label>
-
-                    <input type="radio" id="status-concluida" name="status" value="concluida">
-                    <label for="status-concluida">Concluída</label>
-                </fieldset>
+            <form>
+                <div>
+                    <label for="busca">Buscar tarefa</label>
+                    <input
+                        type="text"
+                        id="busca"
+                        name="busca"
+                        placeholder="Digite o título da tarefa"
+                    >
+                </div>
 
                 <fieldset>
-                    <legend>Filtrar por Prioridade</legend>
+                    <legend>Filtrar por status</legend>
 
-                    <input type="radio" id="prioridade-todas" name="prioridade" value="todas" checked>
-                    <label for="prioridade-todas">Todas</label>
+                    <div>
+                        <input
+                            type="radio"
+                            id="status-afazer-filtro"
+                            name="status"
+                            value="a_fazer"
+                        >
+                        <label for="status-afazer-filtro">A fazer</label>
+                    </div>
 
-                    <input type="radio" id="prioridade-baixa" name="prioridade" value="baixa">
-                    <label for="prioridade-baixa">Baixa</label>
+                    <div>
+                        <input
+                            type="radio"
+                            id="status-andamento-filtro"
+                            name="status"
+                            value="em_andamento"
+                        >
+                        <label for="status-andamento-filtro">Em andamento</label>
+                    </div>
 
-                    <input type="radio" id="prioridade-media" name="prioridade" value="media">
-                    <label for="prioridade-media">Média</label>
+                    <div>
+                        <input
+                            type="radio"
+                            id="status-revisao-filtro"
+                            name="status"
+                            value="em_revisao"
+                        >
+                        <label for="status-revisao-filtro">Em revisão</label>
+                    </div>
 
-                    <input type="radio" id="prioridade-alta" name="prioridade" value="alta">
-                    <label for="prioridade-alta">Alta</label>
+                    <div>
+                        <input
+                            type="radio"
+                            id="status-concluida-filtro"
+                            name="status"
+                            value="concluida"
+                        >
+                        <label for="status-concluida-filtro">Concluída</label>
+                    </div>
                 </fieldset>
 
-                <button type="submit">Pesquisar</button>
+                <button type="submit">Buscar</button>
             </form>
         </section>
 
-        <section aria-labelledby="titulo-quadro">
-            <h2 id="titulo-quadro">Quadro de Tarefas</h2>
+        <section aria-labelledby="titulo-tarefas">
+            <h2 id="titulo-tarefas">Minhas tarefas</h2>
 
             <div class="quadro-tarefas">
 
                 <section aria-labelledby="status-afazer">
                     <h3 id="status-afazer">A fazer</h3>
-
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Fichamento</h4>
-                                <p>Projeto: Redes</p>
-                                <p>Responsável: Douglas</p>
-                                <p>Prazo: 20/08/2026</p>
-                                <p>Prioridade: Média</p>
-                            </article>
-                        </li>
-
-                        <li>
-                            <article>
-                                <h4>Modelagem</h4>
-                                <p>Projeto: Biblioteca</p>
-                                <p>Responsável: Madia</p>
-                                <p>Prazo: 25/08/2026</p>
-                                <p>Prioridade: Alta</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul></ul>
                 </section>
 
                 <section aria-labelledby="status-andamento">
                     <h3 id="status-andamento">Em andamento</h3>
-
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Desenvolvimento</h4>
-                                <p>Projeto: App</p>
-                                <p>Responsável: Art</p>
-                                <p>Prazo: 18/08/2026</p>
-                                <p>Prioridade: Alta</p>
-                            </article>
-                        </li>
-
-                        <li>
-                            <article>
-                                <h4>Software</h4>
-                                <p>Projeto: Interface</p>
-                                <p>Responsável: Cabral</p>
-                                <p>Prazo: 22/08/2026</p>
-                                <p>Prioridade: Baixa</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul></ul>
                 </section>
 
                 <section aria-labelledby="status-revisao">
                     <h3 id="status-revisao">Em revisão</h3>
-
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Revisar artigo</h4>
-                                <p>Projeto: TCC</p>
-                                <p>Responsável: Murada</p>
-                                <p>Prazo: 15/08/2026</p>
-                                <p>Prioridade: Alta</p>
-                            </article>
-                        </li>
-
-                        <li>
-                            <article>
-                                <h4>Testes</h4>
-                                <p>Projeto: Site</p>
-                                <p>Responsável: Artur</p>
-                                <p>Prazo: 16/08/2026</p>
-                                <p>Prioridade: Média</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul></ul>
                 </section>
 
                 <section aria-labelledby="status-concluida">
                     <h3 id="status-concluida">Concluída</h3>
-
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Requisitos</h4>
-                                <p>Projeto: Clínica</p>
-                                <p>Responsável: Arturzin</p>
-                                <p>Prazo: 05/08/2026</p>
-                                <p>Prioridade: Alta</p>
-                            </article>
-                        </li>
-
-                        <li>
-                            <article>
-                                <h4>Configuração do repositório Git</h4>
-                                <p>Projeto: Desenvolvimento Frontend</p>
-                                <p>Responsável: Artur Murada Cabral</p>
-                                <p>Prazo: 11/08/2026</p>
-                                <p>Prioridade: Alta</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul></ul>
                 </section>
 
             </div>
@@ -176,9 +112,50 @@
     </main>
 
     <footer>
-        <p>Artur Murada Cabral</p>
-        <p>Disciplina: Desenvolvimento Frontend — 2026.2</p>
+        <p>Desenvolvimento Frontend — 2026.2</p>
+        <p>Artur Murada</p>
     </footer>
+
+    <script type="module">
+        import { carregarTarefas } from "./js/api.js";
+        import { renderizarEstado } from "./js/estados.js";
+
+        async function iniciar() {
+            renderizarEstado("carregando", []);
+
+            try {
+                const tarefas = await carregarTarefas();
+
+                if (tarefas.length === 0) {
+                    renderizarEstado("vazio", []);
+                    return;
+                }
+
+                renderizarEstado("sucesso", tarefas);
+
+            } catch (erro) {
+                if (erro.name === "TypeError") {
+                    renderizarEstado(
+                        "erro",
+                        "Não foi possível carregar as tarefas. Verifique sua conexão."
+                    );
+                } else if (erro.name === "SyntaxError") {
+                    renderizarEstado(
+                        "erro",
+                        "Não foi possível carregar as tarefas porque o arquivo possui um formato inválido."
+                    );
+                } else {
+                    renderizarEstado(
+                        "erro",
+                        "Não foi possível carregar as tarefas."
+                    );
+                }
+            }
+        }
+
+        iniciar();
+    </script>
 
 </body>
 </html>
+
