@@ -1,186 +1,1969 @@
-:root {
-    --fundo: #f4f4f4;
-    --superficie: #ffffff;
-    --texto: #222222;
-    --borda: #cccccc;
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Roboto+Condensed:wght@400;700&display=swap');
 
-    --afazer: #1d4ed8;
-    --andamento: #b45309;
-    --revisao: #6d28d9;
-    --concluida: #15803d;
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
+
+:root {
+
+    --fundo: #080e19;
+
+    --fundo-secundario: #101a2b;
+
+    --fundo-painel: #111d30;
+
+    --papel: #eee5cb;
+
+    --papel-escuro: #d8cba5;
+
+    --texto: #edf1f5;
+
+    --texto-secundario: #9ba9ba;
+
+    --borda: #314965;
+
+    --borda-clara: #425b78;
+
+    --azul: #708caf;
+
+    --vermelho: #d45663;
+
+    --rosa: #e65c83;
+
+    --amarelo: #f4c75d;
+
+    --laranja: #ef8b43;
+
+    --verde: #61c982;
+
+    --roxo: #7655a9;
 
     --espaco-pequeno: 0.5rem;
+
     --espaco-medio: 1rem;
+
     --espaco-grande: 1.5rem;
 
-    --raio: 0.5rem;
+    --raio: 10px;
+
+    --sombra:
+        0 12px 30px rgba(0, 0, 0, 0.35);
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
+
     box-sizing: border-box;
+
 }
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
 
 body {
-    font-family: Arial, sans-serif;
+
     margin: 0;
-    padding: var(--espaco-medio);
-    background-color: var(--fundo);
+
+    min-height: 100vh;
+
+    padding: 1rem;
+
     color: var(--texto);
+
+    font-family:
+        "Roboto Condensed",
+        "Trebuchet MS",
+        sans-serif;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 15%,
+            rgba(65, 94, 125, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(102, 69, 102, 0.15),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #070c16,
+            #101a2a 50%,
+            #080e18
+        );
+
     font-size: 1rem;
+
 }
 
-header {
-    text-align: center;
-    margin-bottom: var(--espaco-grande);
+
+/* =====================================================
+   TIPOGRAFIA
+===================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-family:
+        "Patrick Hand",
+        "Comic Sans MS",
+        cursive;
+
 }
+
 
 h1 {
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
+
+    font-size:
+        clamp(
+            2.2rem,
+            6vw,
+            3.7rem
+        );
+
+    letter-spacing:
+        0.05em;
+
 }
+
 
 h2 {
-    margin-top: var(--espaco-grande);
+
+    font-size:
+        1.8rem;
+
 }
+
+
+h3 {
+
+    font-size:
+        1.45rem;
+
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+header {
+
+    position: relative;
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto 1.5rem;
+
+    padding:
+        1.5rem;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        1rem;
+
+    text-align:
+        center;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        var(--raio);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(23, 38, 59, 0.96),
+            rgba(10, 18, 31, 0.96)
+        );
+
+    box-shadow:
+        var(--sombra);
+
+    overflow:
+        hidden;
+
+}
+
+
+header h1 {
+
+    margin:
+        0;
+
+    color:
+        var(--papel);
+
+    text-shadow:
+        3px 3px 0 #1c2a3d;
+
+}
+
+
+header p {
+
+    margin:
+        0.2rem 0 0;
+
+    color:
+        var(--texto-secundario);
+
+    font-size:
+        1rem;
+
+}
+
+
+.decoracao-header {
+
+    color:
+        var(--amarelo);
+
+    font-size:
+        1.7rem;
+
+    opacity:
+        0.7;
+
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =====================================================
+   PAINÉIS
+===================================================== */
+
+.painel {
+
+    margin-bottom:
+        var(--espaco-grande);
+
+    padding:
+        var(--espaco-medio);
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        var(--raio);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(18, 31, 49, 0.95),
+            rgba(10, 20, 34, 0.95)
+        );
+
+    box-shadow:
+        var(--sombra);
+
+}
+
+
+/* =====================================================
+   TÍTULOS DAS SEÇÕES
+===================================================== */
+
+.titulo-secao {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        0.8rem;
+
+    margin-bottom:
+        1rem;
+
+}
+
+
+.titulo-secao h2 {
+
+    margin:
+        0;
+
+    color:
+        var(--papel);
+
+}
+
+
+.titulo-secao span {
+
+    color:
+        var(--amarelo);
+
+}
+
+
+/* =====================================================
+   MENSAGEM DE ESTADO
+===================================================== */
+
+[data-estado] {
+
+    max-width:
+        1400px;
+
+    margin:
+        0 auto 1rem;
+
+    padding:
+        0.8rem 1rem;
+
+    border-left:
+        4px solid var(--amarelo);
+
+    border-radius:
+        4px;
+
+    color:
+        var(--papel);
+
+    background:
+        rgba(20, 32, 49, 0.9);
+
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
 
 form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-medio);
 
-    background-color: var(--superficie);
-    padding: var(--espaco-medio);
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        var(--espaco-medio);
+
 }
+
+
+label {
+
+    display:
+        block;
+
+    margin-bottom:
+        0.35rem;
+
+    color:
+        #dbe2eb;
+
+}
+
+
+input[type="text"],
+select {
+
+    width:
+        100%;
+
+    min-height:
+        2.7rem;
+
+    padding:
+        0.65rem;
+
+    border:
+        1px solid var(--borda-clara);
+
+    border-radius:
+        5px;
+
+    outline:
+        none;
+
+    background:
+        #0c1727;
+
+    color:
+        var(--texto);
+
+    font-family:
+        inherit;
+
+    font-size:
+        1rem;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+input[type="text"]:focus,
+select:focus {
+
+    border-color:
+        var(--amarelo);
+
+    box-shadow:
+        0 0 0 2px
+        rgba(244, 199, 93, 0.15);
+
+}
+
+
+input[type="text"]::placeholder {
+
+    color:
+        #718097;
+
+}
+
+
+/* =====================================================
+   FIELDSETS
+===================================================== */
 
 fieldset {
-    padding: var(--espaco-medio);
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
+
+    margin:
+        0;
+
+    padding:
+        1rem;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        7px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
 }
 
-input[type="text"] {
-    width: 100%;
-    min-height: 2.5rem;
-    padding: var(--espaco-pequeno);
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
-    font-size: 1rem;
+
+legend {
+
+    padding:
+        0 0.5rem;
+
+    color:
+        var(--amarelo);
+
+    font-family:
+        "Patrick Hand",
+        cursive;
+
+    font-size:
+        1.15rem;
+
 }
+
+
+.opcoes-filtro {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        0.8rem 1.2rem;
+
+}
+
+
+.opcoes-filtro > div {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        0.35rem;
+
+}
+
 
 input[type="radio"] {
-    width: 1.5rem;
-    height: 1.5rem;
-    vertical-align: middle;
+
+    width:
+        1.15rem;
+
+    height:
+        1.15rem;
+
+    margin:
+        0;
+
+    accent-color:
+        var(--rosa);
+
 }
+
+
+/* =====================================================
+   BOTÃO
+===================================================== */
 
 button {
-    min-height: 2.5rem;
-    padding: var(--espaco-pequeno) var(--espaco-medio);
-    border: 0;
-    border-radius: var(--raio);
-    background-color: var(--texto);
-    color: white;
-    font-size: 1rem;
+
+    min-height:
+        2.7rem;
+
+    padding:
+        0.6rem 1rem;
+
+    border:
+        2px solid var(--borda-clara);
+
+    border-radius:
+        5px;
+
+    color:
+        var(--papel);
+
+    background:
+        #17263b;
+
+    font-family:
+        "Patrick Hand",
+        cursive;
+
+    font-size:
+        1.15rem;
+
+    cursor:
+        pointer;
+
+    transition:
+        0.2s ease;
+
 }
+
+
+button:hover {
+
+    background:
+        #263a55;
+
+    border-color:
+        var(--amarelo);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =====================================================
+   QUADRO DE TAREFAS
+===================================================== */
 
 .quadro-tarefas {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--espaco-grande);
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    gap:
+        var(--espaco-grande);
+
 }
 
-.quadro-tarefas > section {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-medio);
-    min-width: 0;
+
+.coluna-tarefas {
+
+    min-width:
+        0;
+
+    padding:
+        0.8rem;
+
+    border:
+        1px solid var(--borda);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(7, 15, 27, 0.5);
+
 }
 
-.quadro-tarefas > section:nth-child(1) h3 {
-    color: var(--afazer);
+
+.titulo-coluna {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        0.5rem;
+
+    margin-bottom:
+        0.8rem;
+
+    padding-bottom:
+        0.5rem;
+
+    border-bottom:
+        1px dashed #40536c;
+
 }
 
-.quadro-tarefas > section:nth-child(2) h3 {
-    color: var(--andamento);
+
+.titulo-coluna h3 {
+
+    margin:
+        0;
+
 }
 
-.quadro-tarefas > section:nth-child(3) h3 {
-    color: var(--revisao);
+
+.simbolo-status {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        28px;
+
+    height:
+        28px;
+
+    border-radius:
+        50%;
+
+    color:
+        #101a27;
+
+    background:
+        var(--amarelo);
+
+    font-weight:
+        bold;
+
 }
 
-.quadro-tarefas > section:nth-child(4) h3 {
-    color: var(--concluida);
+
+/* Cores das colunas */
+
+.coluna-tarefas:nth-child(2)
+.simbolo-status {
+
+    background:
+        var(--azul);
+
 }
+
+
+.coluna-tarefas:nth-child(3)
+.simbolo-status {
+
+    background:
+        var(--rosa);
+
+}
+
+
+.coluna-tarefas:nth-child(4)
+.simbolo-status {
+
+    background:
+        var(--verde);
+
+}
+
+
+.coluna-tarefas:nth-child(1) h3 {
+
+    color:
+        var(--amarelo);
+
+}
+
+
+.coluna-tarefas:nth-child(2) h3 {
+
+    color:
+        var(--azul);
+
+}
+
+
+.coluna-tarefas:nth-child(3) h3 {
+
+    color:
+        var(--rosa);
+
+}
+
+
+.coluna-tarefas:nth-child(4) h3 {
+
+    color:
+        var(--verde);
+
+}
+
+
+/* =====================================================
+   LISTAS
+===================================================== */
 
 ul {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-medio);
 
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    min-width: 0;
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.8rem;
+
+    padding:
+        0;
+
+    margin:
+        0;
+
+    list-style:
+        none;
+
 }
 
-li {
-    min-width: 0;
+
+/* =====================================================
+   CARTÕES
+===================================================== */
+
+.cartao-tarefa {
+
+    position:
+        relative;
+
+    min-height:
+        11rem;
+
+    padding:
+        1rem;
+
+    overflow:
+        hidden;
+
+    color:
+        #202735;
+
+    border:
+        2px solid #a99d7d;
+
+    border-radius:
+        4px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f0e6c8,
+            #dfd0a7
+        );
+
+    box-shadow:
+        4px 5px 0
+        rgba(0, 0, 0, 0.25);
+
+    transform:
+        rotate(-0.4deg);
+
+    transition:
+        0.2s ease;
+
 }
 
-article {
-    display: flex;
-    flex-direction: column;
-    gap: var(--espaco-pequeno);
 
-    min-width: 0;
-    min-height: 10rem;
-    padding: var(--espaco-medio);
+li:nth-child(even)
+.cartao-tarefa {
 
-    background-color: var(--superficie);
-    border: 1px solid var(--borda);
-    border-radius: var(--raio);
+    transform:
+        rotate(0.4deg);
+
 }
 
-article h4 {
-    min-width: 0;
-    margin: 0;
-    flex: 1;
 
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.cartao-tarefa:hover {
+
+    transform:
+        translateY(-4px)
+        rotate(0deg);
+
+    box-shadow:
+        6px 9px 0
+        rgba(0, 0, 0, 0.35);
+
 }
 
-article p {
-    margin: 0;
+
+.cartao-decoracao {
+
+    position:
+        absolute;
+
+    top:
+        6px;
+
+    right:
+        10px;
+
+    color:
+        #9e8d5d;
+
+    font-size:
+        1.2rem;
+
 }
 
-article p:nth-of-type(3) {
-    margin-top: auto;
+
+.cartao-tarefa h4 {
+
+    margin:
+        0 1.5rem 0.8rem 0;
+
+    font-size:
+        1.35rem;
+
+    line-height:
+        1.1;
+
 }
 
-input:focus,
-button:focus {
-    outline: 3px solid #2563eb;
-    outline-offset: 2px;
+
+.informacoes-tarefa {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        0.3rem;
+
 }
+
+
+.informacoes-tarefa p {
+
+    display:
+        flex;
+
+    justify-content:
+        space-between;
+
+    gap:
+        1rem;
+
+    margin:
+        0;
+
+    font-size:
+        0.9rem;
+
+}
+
+
+.informacoes-tarefa span {
+
+    color:
+        #665e4c;
+
+}
+
+
+.informacoes-tarefa strong {
+
+    color:
+        #272d39;
+
+}
+
+
+/* =====================================================
+   PRIORIDADES
+===================================================== */
+
+.prioridade-alta {
+
+    border-left:
+        5px solid var(--vermelho);
+
+}
+
+
+.prioridade-media {
+
+    border-left:
+        5px solid var(--laranja);
+
+}
+
+
+.prioridade-baixa {
+
+    border-left:
+        5px solid var(--verde);
+
+}
+
+
+/* =====================================================
+   TAREFA ATRASADA
+===================================================== */
+
+.tarefa-atrasada {
+
+    border-color:
+        #b95a5a;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #eed9c4,
+            #dcbca8
+        );
+
+}
+
+
+.tarefa-atrasada .cartao-decoracao {
+
+    color:
+        var(--vermelho);
+
+}
+
+
+.badge-atrasada,
+.badge-em-dia {
+
+    display:
+        inline-block;
+
+    align-self:
+        flex-start;
+
+    margin-top:
+        0.8rem;
+
+    padding:
+        0.25rem 0.7rem;
+
+    border-radius:
+        20px;
+
+    font-family:
+        "Patrick Hand",
+        cursive;
+
+    font-size:
+        0.9rem;
+
+}
+
+
+.badge-atrasada {
+
+    color:
+        white;
+
+    background:
+        var(--vermelho);
+
+}
+
+
+.badge-em-dia {
+
+    color:
+        #12321e;
+
+    background:
+        var(--verde);
+
+}
+
+
+/* =====================================================
+   MASCOTE
+===================================================== */
+
+.mascote {
+
+    position:
+        relative;
+
+    margin-top:
+        2rem;
+
+    padding:
+        1.2rem;
+
+    overflow:
+        hidden;
+
+    border:
+        2px solid var(--borda);
+
+    border-radius:
+        12px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(72, 103, 137, 0.2),
+            transparent 45%
+        ),
+
+        #0a1422;
+
+    box-shadow:
+        0 18px 50px
+        rgba(0, 0, 0, 0.5);
+
+    transition:
+        0.5s ease;
+
+}
+
+
+.mascote::before {
+
+    content:
+        "▲ ★ ▲ ★ ▲ ★ ▲";
+
+    position:
+        absolute;
+
+    top:
+        4px;
+
+    left:
+        0;
+
+    width:
+        100%;
+
+    text-align:
+        center;
+
+    color:
+        rgba(244, 199, 93, 0.12);
+
+    letter-spacing:
+        1rem;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =====================================================
+   CABEÇALHO DO MASCOTE
+===================================================== */
+
+.mascote-cabecalho {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        1rem;
+
+    text-align:
+        center;
+
+}
+
+
+.mascote-cabecalho h2 {
+
+    margin:
+        0;
+
+    color:
+        var(--papel);
+
+    font-size:
+        2rem;
+
+}
+
+
+.mascote-cabecalho p {
+
+    margin:
+        0;
+
+    color:
+        var(--texto-secundario);
+
+}
+
+
+.simbolo-floresta {
+
+    color:
+        var(--amarelo);
+
+    font-size:
+        1.5rem;
+
+}
+
+
+/* =====================================================
+   PALCO
+===================================================== */
+
+.mascote-palco {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        center;
+
+    min-height:
+        280px;
+
+    margin-top:
+        0.5rem;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        10px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(54, 86, 75, 0.35),
+            transparent 50%
+        ),
+
+        linear-gradient(
+            180deg,
+            #101d30,
+            #07111d
+        );
+
+}
+
+
+/* =====================================================
+   FLORESTA
+===================================================== */
+
+.floresta-fundo {
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    bottom:
+        0;
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-around;
+
+    color:
+        #182d32;
+
+    font-size:
+        7rem;
+
+    line-height:
+        0.5;
+
+    opacity:
+        0.45;
+
+    pointer-events:
+        none;
+
+}
+
+
+.floresta-fundo span:nth-child(even) {
+
+    font-size:
+        5rem;
+
+    opacity:
+        0.7;
+
+}
+
+
+/* =====================================================
+   PERSONAGENS
+===================================================== */
+
+.mascote-personagens {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    width:
+        min(650px, 75%);
+
+    text-align:
+        center;
+
+}
+
+
+#personagens {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    max-height:
+        350px;
+
+    margin:
+        0 auto;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 14px 8px
+            rgba(0, 0, 0, 0.45)
+        );
+
+    transition:
+        opacity 0.35s ease,
+        transform 0.35s ease,
+        filter 0.35s ease;
+
+}
+
+
+/* =====================================================
+   BILL
+===================================================== */
+
+.bill {
+
+    position:
+        absolute;
+
+    z-index:
+        4;
+
+    right:
+        3%;
+
+    bottom:
+        0;
+
+    width:
+        180px;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(70px)
+        scale(0.6)
+        rotate(-10deg);
+
+    pointer-events:
+        none;
+
+    transition:
+        0.7s ease;
+
+}
+
+
+.bill img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255, 205, 45, 0.6)
+        );
+
+}
+
+
+/* Bill aparecendo */
+
+.bill-aparecendo {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0)
+        scale(1)
+        rotate(0deg);
+
+}
+
+
+/* Bill dominando */
+
+.bill-dominando {
+
+    opacity:
+        1;
+
+    right:
+        50%;
+
+    width:
+        280px;
+
+    transform:
+        translateX(50%)
+        translateY(0)
+        scale(1.15);
+
+    animation:
+        bill-pulsar 1.4s
+        infinite alternate;
+
+}
+
+
+@keyframes bill-pulsar {
+
+    from {
+
+        filter:
+            drop-shadow(
+                0 0 10px
+                rgba(255, 205, 45, 0.3)
+            );
+
+    }
+
+    to {
+
+        filter:
+            drop-shadow(
+                0 0 40px
+                rgba(255, 205, 45, 0.9)
+            );
+
+    }
+
+}
+
+
+/* =====================================================
+   STATUS DO MASCOTE
+===================================================== */
+
+.mascote-status {
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    margin-top:
+        0.8rem;
+
+    padding:
+        1rem;
+
+    text-align:
+        center;
+
+    border-top:
+        1px dashed #40546c;
+
+}
+
+
+.status-livro {
+
+    display:
+        block;
+
+    color:
+        #8190a5;
+
+    font-size:
+        0.75rem;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+#nivel-mascote {
+
+    display:
+        inline-block;
+
+    margin:
+        0.5rem 0;
+
+    padding:
+        0.3rem 1.3rem;
+
+    border-radius:
+        20px;
+
+    color:
+        #102016;
+
+    background:
+        var(--verde);
+
+    font-family:
+        "Patrick Hand",
+        cursive;
+
+    font-size:
+        1.2rem;
+
+}
+
+
+.mensagem-mascote {
+
+    max-width:
+        700px;
+
+    margin:
+        0.3rem auto;
+
+    color:
+        #d5deea;
+
+    font-size:
+        1.1rem;
+
+}
+
+
+.contador-atrasadas {
+
+    margin:
+        0.5rem 0 0;
+
+    color:
+        #8795a8;
+
+}
+
+
+.contador-atrasadas strong {
+
+    color:
+        var(--papel);
+
+    font-size:
+        1.2rem;
+
+}
+
+
+/* =====================================================
+   ESTADOS DO MASCOTE
+===================================================== */
+
+.estado-preocupado #nivel-mascote {
+
+    background:
+        var(--amarelo);
+
+}
+
+
+.estado-cansado #nivel-mascote {
+
+    background:
+        var(--laranja);
+
+}
+
+
+.estado-estressado #nivel-mascote {
+
+    color:
+        white;
+
+    background:
+        var(--rosa);
+
+}
+
+
+.estado-bill {
+
+    border-color:
+        #5b4930;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(255, 194, 40, 0.15),
+            transparent 25%
+        ),
+
+        #13151a;
+
+}
+
+
+.estado-bill #nivel-mascote {
+
+    color:
+        white;
+
+    background:
+        var(--roxo);
+
+}
+
+
+.estado-bill .mascote-palco {
+
+    background:
+
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 193, 7, 0.15),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            180deg,
+            #171923,
+            #080c12
+        );
+
+}
+
+
+.estado-dominado {
+
+    border-color:
+        #806322;
+
+    animation:
+        dominio-pulsar 2s
+        infinite alternate;
+
+}
+
+
+.estado-dominado #nivel-mascote {
+
+    color:
+        #201600;
+
+    background:
+        var(--amarelo);
+
+}
+
+
+.estado-dominado .mascote-palco {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255, 195, 35, 0.12),
+            transparent 45%
+        ),
+
+        #0a0b0e;
+
+}
+
+
+@keyframes dominio-pulsar {
+
+    from {
+
+        box-shadow:
+            0 18px 50px
+            rgba(0, 0, 0, 0.5);
+
+    }
+
+    to {
+
+        box-shadow:
+            0 18px 70px
+            rgba(255, 193, 7, 0.18);
+
+    }
+
+}
+
+
+/* =====================================================
+   RODAPÉ
+===================================================== */
 
 footer {
-    margin-top: var(--espaco-grande);
-    padding-top: var(--espaco-medio);
-    border-top: 1px solid var(--borda);
-    text-align: center;
+
+    max-width:
+        1400px;
+
+    margin:
+        2rem auto 0;
+
+    padding:
+        1rem;
+
+    border-top:
+        1px solid var(--borda);
+
+    text-align:
+        center;
+
+    color:
+        #68788d;
+
+    font-size:
+        0.9rem;
+
 }
+
+
+/* =====================================================
+   ACESSIBILIDADE
+===================================================== */
+
+button:focus,
+input:focus,
+select:focus {
+
+    outline:
+        3px solid var(--amarelo);
+
+    outline-offset:
+        3px;
+
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (min-width: 700px) {
-    .quadro-tarefas {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    body {
+
+        padding:
+            1.5rem;
+
     }
+
+
+    .quadro-tarefas {
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    form {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+    }
+
+
+    .campo-busca {
+
+        grid-column:
+            1 / -1;
+
+    }
+
+
+    #limpar-filtros {
+
+        grid-column:
+            1 / -1;
+
+    }
+
 }
 
+
+/* =====================================================
+   DESKTOP
+===================================================== */
+
 @media (min-width: 1100px) {
+
     .quadro-tarefas {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+
+        grid-template-columns:
+            repeat(
+                4,
+                minmax(0, 1fr)
+            );
+
     }
+
+
+    .mascote-palco {
+
+        min-height:
+            350px;
+
+    }
+
+
+    #personagens {
+
+        max-height:
+            380px;
+
+    }
+
+}
+
+
+/* =====================================================
+   CELULAR
+===================================================== */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding:
+            0.5rem;
+
+    }
+
+
+    header {
+
+        padding:
+            1rem;
+
+    }
+
+
+    .decoracao-header {
+
+        display:
+            none;
+
+    }
+
+
+    .titulo-secao h2 {
+
+        font-size:
+            1.5rem;
+
+    }
+
+
+    .mascote {
+
+        padding:
+            0.7rem;
+
+    }
+
+
+    .mascote-cabecalho h2 {
+
+        font-size:
+            1.5rem;
+
+    }
+
+
+    .mascote-palco {
+
+        min-height:
+            220px;
+
+    }
+
+
+    .mascote-personagens {
+
+        width:
+            100%;
+
+    }
+
+
+    #personagens {
+
+        max-height:
+            260px;
+
+    }
+
+
+    .bill {
+
+        width:
+            100px;
+
+    }
+
+
+    .bill-dominando {
+
+        width:
+            180px;
+
+    }
+
+
+    .floresta-fundo {
+
+        font-size:
+            4rem;
+
+    }
+
 }

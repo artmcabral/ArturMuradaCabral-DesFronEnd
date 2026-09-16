@@ -1,222 +1,587 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gerenciador de Tarefas Acadêmicas</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="styles.css">
+    <title>Diário dos Mistérios — Gerenciador de Tarefas</title>
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
 </head>
+
 
 <body>
 
+    <!-- ==================================================
+         CABEÇALHO
+    =================================================== -->
+
     <header>
-        <h1>Gerenciador de Tarefas Acadêmicas</h1>
+
+        <div class="decoracao-header">
+            ★
+        </div>
+
+        <h1>
+            Diário dos Mistérios
+        </h1>
+
+        <p>
+            Gerenciador de Tarefas Acadêmicas
+        </p>
+
+        <div class="decoracao-header">
+            ★
+        </div>
+
     </header>
+
 
     <main>
 
-        <p data-estado role="status" aria-live="polite"></p>
+        <!-- ==================================================
+             MENSAGEM DE ESTADO
+        =================================================== -->
 
-        <section aria-labelledby="titulo-filtros">
-            <h2 id="titulo-filtros">Buscar e filtrar tarefas</h2>
+        <p
+            data-estado
+            role="status"
+            aria-live="polite"
+        ></p>
+
+
+        <!-- ==================================================
+             FILTROS
+        =================================================== -->
+
+        <section
+            aria-labelledby="titulo-filtros"
+            class="painel"
+        >
+
+            <div class="titulo-secao">
+
+                <span>✦</span>
+
+                <h2 id="titulo-filtros">
+                    Buscar e filtrar tarefas
+                </h2>
+
+                <span>✦</span>
+
+            </div>
+
 
             <form id="filtros">
 
-                <div>
-                    <label for="busca">Buscar tarefa</label>
+                <div class="campo-busca">
+
+                    <label for="busca">
+                        Buscar tarefa
+                    </label>
+
                     <input
                         type="text"
                         id="busca"
                         name="busca"
                         placeholder="Digite o título da tarefa"
                     >
+
                 </div>
 
-                <fieldset>
-                    <legend>Filtrar por status</legend>
 
-                    <div>
-                        <input
-                            type="radio"
-                            id="status-todos"
-                            name="status"
-                            value="todos"
-                            checked
-                        >
-                        <label for="status-todos">Todos</label>
-                    </div>
-
-                    <div>
-                        <input
-                            type="radio"
-                            id="status-afazer-filtro"
-                            name="status"
-                            value="a_fazer"
-                        >
-                        <label for="status-afazer-filtro">A fazer</label>
-                    </div>
-
-                    <div>
-                        <input
-                            type="radio"
-                            id="status-andamento-filtro"
-                            name="status"
-                            value="em_andamento"
-                        >
-                        <label for="status-andamento-filtro">Em andamento</label>
-                    </div>
-
-                    <div>
-                        <input
-                            type="radio"
-                            id="status-revisao-filtro"
-                            name="status"
-                            value="em_revisao"
-                        >
-                        <label for="status-revisao-filtro">Em revisão</label>
-                    </div>
-
-                    <div>
-                        <input
-                            type="radio"
-                            id="status-concluida-filtro"
-                            name="status"
-                            value="concluida"
-                        >
-                        <label for="status-concluida-filtro">Concluída</label>
-                    </div>
-                </fieldset>
+                <!-- STATUS -->
 
                 <fieldset>
-                    <legend>Filtrar por prioridade</legend>
 
-                    <div>
-                        <input
-                            type="radio"
-                            id="prioridade-todas"
-                            name="prioridade"
-                            value="todas"
-                            checked
-                        >
-                        <label for="prioridade-todas">Todas</label>
+                    <legend>
+                        Filtrar por status
+                    </legend>
+
+
+                    <div class="opcoes-filtro">
+
+                        <div>
+                            <input
+                                type="radio"
+                                id="status-todos"
+                                name="status"
+                                value="todos"
+                                checked
+                            >
+
+                            <label for="status-todos">
+                                Todos
+                            </label>
+                        </div>
+
+
+                        <div>
+                            <input
+                                type="radio"
+                                id="status-afazer-filtro"
+                                name="status"
+                                value="a_fazer"
+                            >
+
+                            <label for="status-afazer-filtro">
+                                A fazer
+                            </label>
+                        </div>
+
+
+                        <div>
+                            <input
+                                type="radio"
+                                id="status-andamento-filtro"
+                                name="status"
+                                value="em_andamento"
+                            >
+
+                            <label for="status-andamento-filtro">
+                                Em andamento
+                            </label>
+                        </div>
+
+
+                        <div>
+                            <input
+                                type="radio"
+                                id="status-revisao-filtro"
+                                name="status"
+                                value="em_revisao"
+                            >
+
+                            <label for="status-revisao-filtro">
+                                Em revisão
+                            </label>
+                        </div>
+
+
+                        <div>
+                            <input
+                                type="radio"
+                                id="status-concluida-filtro"
+                                name="status"
+                                value="concluida"
+                            >
+
+                            <label for="status-concluida-filtro">
+                                Concluída
+                            </label>
+                        </div>
+
                     </div>
 
-                    <div>
-                        <input
-                            type="radio"
-                            id="prioridade-alta"
-                            name="prioridade"
-                            value="alta"
-                        >
-                        <label for="prioridade-alta">Alta</label>
-                    </div>
-
-                    <div>
-                        <input
-                            type="radio"
-                            id="prioridade-media"
-                            name="prioridade"
-                            value="media"
-                        >
-                        <label for="prioridade-media">Média</label>
-                    </div>
-
-                    <div>
-                        <input
-                            type="radio"
-                            id="prioridade-baixa"
-                            name="prioridade"
-                            value="baixa"
-                        >
-                        <label for="prioridade-baixa">Baixa</label>
-                    </div>
                 </fieldset>
 
-                <div>
-                    <label for="ordenacao">Ordenar por prazo</label>
 
-                    <select id="ordenacao" name="ordenacao">
-                        <option value="prazo-asc">Prazo: mais próximo</option>
-                        <option value="prazo-desc">Prazo: mais distante</option>
+                <!-- PRIORIDADE -->
+
+                <fieldset>
+
+                    <legend>
+                        Filtrar por prioridade
+                    </legend>
+
+
+                    <div class="opcoes-filtro">
+
+                        <div>
+
+                            <input
+                                type="radio"
+                                id="prioridade-todas"
+                                name="prioridade"
+                                value="todas"
+                                checked
+                            >
+
+                            <label for="prioridade-todas">
+                                Todas
+                            </label>
+
+                        </div>
+
+
+                        <div>
+
+                            <input
+                                type="radio"
+                                id="prioridade-alta"
+                                name="prioridade"
+                                value="alta"
+                            >
+
+                            <label for="prioridade-alta">
+                                Alta
+                            </label>
+
+                        </div>
+
+
+                        <div>
+
+                            <input
+                                type="radio"
+                                id="prioridade-media"
+                                name="prioridade"
+                                value="media"
+                            >
+
+                            <label for="prioridade-media">
+                                Média
+                            </label>
+
+                        </div>
+
+
+                        <div>
+
+                            <input
+                                type="radio"
+                                id="prioridade-baixa"
+                                name="prioridade"
+                                value="baixa"
+                            >
+
+                            <label for="prioridade-baixa">
+                                Baixa
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+
+                <!-- ORDENAÇÃO -->
+
+                <div class="campo-ordenacao">
+
+                    <label for="ordenacao">
+                        Ordenar por prazo
+                    </label>
+
+                    <select
+                        id="ordenacao"
+                        name="ordenacao"
+                    >
+
+                        <option value="prazo-asc">
+                            Prazo: mais próximo
+                        </option>
+
+                        <option value="prazo-desc">
+                            Prazo: mais distante
+                        </option>
+
                     </select>
+
                 </div>
 
-                <button type="button" id="limpar-filtros">
-                    Limpar filtros
+
+                <button
+                    type="button"
+                    id="limpar-filtros"
+                >
+                    ✦ Limpar filtros ✦
                 </button>
 
             </form>
+
         </section>
 
-        <section aria-labelledby="titulo-tarefas">
-            <h2 id="titulo-tarefas">Minhas tarefas</h2>
+
+
+        <!-- ==================================================
+             TAREFAS
+        =================================================== -->
+
+        <section
+            aria-labelledby="titulo-tarefas"
+            class="painel tarefas-painel"
+        >
+
+            <div class="titulo-secao">
+
+                <span>✦</span>
+
+                <h2 id="titulo-tarefas">
+                    Minhas tarefas
+                </h2>
+
+                <span>✦</span>
+
+            </div>
+
 
             <div class="quadro-tarefas">
 
-                <section aria-labelledby="status-afazer">
-                    <h3 id="status-afazer">A fazer</h3>
-                    <ul data-lista="a_fazer"></ul>
+
+                <!-- A FAZER -->
+
+                <section class="coluna-tarefas">
+
+                    <div class="titulo-coluna">
+
+                        <span class="simbolo-status">
+                            !
+                        </span>
+
+                        <h3 id="status-afazer">
+                            A fazer
+                        </h3>
+
+                    </div>
+
+                    <ul
+                        data-lista="a_fazer"
+                    ></ul>
+
                 </section>
 
-                <section aria-labelledby="status-andamento">
-                    <h3 id="status-andamento">Em andamento</h3>
-                    <ul data-lista="em_andamento"></ul>
+
+                <!-- EM ANDAMENTO -->
+
+                <section class="coluna-tarefas">
+
+                    <div class="titulo-coluna">
+
+                        <span class="simbolo-status">
+                            ◐
+                        </span>
+
+                        <h3 id="status-andamento">
+                            Em andamento
+                        </h3>
+
+                    </div>
+
+                    <ul
+                        data-lista="em_andamento"
+                    ></ul>
+
                 </section>
 
-                <section aria-labelledby="status-revisao">
-                    <h3 id="status-revisao">Em revisão</h3>
-                    <ul data-lista="em_revisao"></ul>
+
+                <!-- EM REVISÃO -->
+
+                <section class="coluna-tarefas">
+
+                    <div class="titulo-coluna">
+
+                        <span class="simbolo-status">
+                            ?
+                        </span>
+
+                        <h3 id="status-revisao">
+                            Em revisão
+                        </h3>
+
+                    </div>
+
+                    <ul
+                        data-lista="em_revisao"
+                    ></ul>
+
                 </section>
 
-                <section aria-labelledby="status-concluida">
-                    <h3 id="status-concluida">Concluída</h3>
-                    <ul data-lista="concluida"></ul>
+
+                <!-- CONCLUÍDA -->
+
+                <section class="coluna-tarefas">
+
+                    <div class="titulo-coluna">
+
+                        <span class="simbolo-status">
+                            ✓
+                        </span>
+
+                        <h3 id="status-concluida">
+                            Concluída
+                        </h3>
+
+                    </div>
+
+                    <ul
+                        data-lista="concluida"
+                    ></ul>
+
                 </section>
+
 
             </div>
+
         </section>
 
-        <aside class="mascote" aria-label="Mascotes da rotina acadêmica">
 
-            <div class="mascote-personagens">
-                <img
-                    src="./imagens/mabel.png"
-                    alt="Mabel, mascote da rotina acadêmica"
-                    id="mabel"
-                >
 
-                <img
-                    src="./imagens/dipper.png"
-                    alt="Dipper, mascote da rotina acadêmica"
-                    id="dipper"
-                >
+        <!-- ==================================================
+             MASCOTE
+        =================================================== -->
+
+        <aside
+            class="mascote estado-normal"
+            aria-label="Estado dos mascotes"
+        >
+
+
+            <!-- CABEÇALHO DO MASCOTE -->
+
+            <div class="mascote-cabecalho">
+
+                <span class="simbolo-floresta">
+                    ★
+                </span>
+
+
+                <div>
+
+                    <h2>
+                        Diário dos Mistérios
+                    </h2>
+
+                    <p>
+                        Estado da sua rotina acadêmica
+                    </p>
+
+                </div>
+
+
+                <span class="simbolo-floresta">
+                    ★
+                </span>
+
             </div>
 
-            <div class="bill">
-                <img
-                    src="./imagens/bill.png"
-                    alt="Bill Cipher aparecendo por causa das tarefas atrasadas"
-                    id="bill"
-                >
+
+
+            <!-- PALCO -->
+
+            <div class="mascote-palco">
+
+
+                <!-- FLORESTA DECORATIVA -->
+
+                <div class="floresta-fundo">
+
+                    <span>♠</span>
+                    <span>♠</span>
+                    <span>♠</span>
+                    <span>♠</span>
+                    <span>♠</span>
+
+                </div>
+
+
+                <!-- DIPPER E MABEL -->
+
+                <div class="mascote-personagens">
+
+                    <img
+                        src="./imagens/personagens_normal.png"
+                        alt="Dipper e Mabel"
+                        id="personagens"
+                    >
+
+                </div>
+
+
+                <!-- BILL -->
+
+                <div class="bill">
+
+                    <img
+                        src="./imagens/bill.png"
+                        alt="Bill Cipher"
+                        id="bill"
+                    >
+
+                </div>
+
+
             </div>
 
-            <p class="mensagem-mascote" id="mensagem-mascote">
-                Tudo em dia! Continue assim!
-            </p>
+
+
+            <!-- STATUS -->
+
+            <div class="mascote-status">
+
+                <span class="status-livro">
+                    ESTADO DO DIÁRIO
+                </span>
+
+
+                <strong id="nivel-mascote">
+                    TUDO EM DIA
+                </strong>
+
+
+                <p
+                    class="mensagem-mascote"
+                    id="mensagem-mascote"
+                >
+                    Tudo em dia! Continue assim!
+                </p>
+
+
+                <p class="contador-atrasadas">
+
+                    Tarefas atrasadas:
+
+                    <strong id="contador-atrasadas">
+                        0
+                    </strong>
+
+                </p>
+
+            </div>
 
         </aside>
 
+
     </main>
 
+
+
+    <!-- ==================================================
+         RODAPÉ
+    =================================================== -->
+
     <footer>
-        <p>Desenvolvimento Frontend — 2026.2</p>
-        <p>Artur Murada</p>
+
+        <p>
+            Diário dos Mistérios • Desenvolvimento Frontend — 2026.2
+        </p>
+
+        <p>
+            Artur Murada
+        </p>
+
     </footer>
 
-    <script type="module" src="./js/main.js"></script>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
+    <script
+        type="module"
+        src="./js/main.js"
+    ></script>
 
 </body>
-</html>
 
+</html> 
