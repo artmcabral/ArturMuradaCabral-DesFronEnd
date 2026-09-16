@@ -2,8 +2,10 @@ export function derivarTarefas(estado) {
     let tarefas = [...estado.tarefas];
 
     if (estado.busca.trim() !== "") {
+        const termo = estado.busca.trim().toLowerCase();
+
         tarefas = tarefas.filter(tarefa =>
-            tarefa.titulo.toLowerCase().includes(estado.busca.trim().toLowerCase())
+            tarefa.titulo.toLowerCase().includes(termo)
         );
     }
 
@@ -25,6 +27,15 @@ export function derivarTarefas(estado) {
             const dataB = b.prazo.split("/").reverse().join("-");
 
             return dataA.localeCompare(dataB);
+        });
+    }
+
+    if (estado.ordenacao === "prazo-desc") {
+        tarefas.sort((a, b) => {
+            const dataA = a.prazo.split("/").reverse().join("-");
+            const dataB = b.prazo.split("/").reverse().join("-");
+
+            return dataB.localeCompare(dataA);
         });
     }
 

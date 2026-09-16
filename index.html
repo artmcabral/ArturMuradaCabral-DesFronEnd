@@ -22,7 +22,8 @@
         <section aria-labelledby="titulo-filtros">
             <h2 id="titulo-filtros">Buscar e filtrar tarefas</h2>
 
-            <form>
+            <form id="filtros">
+
                 <div>
                     <label for="busca">Buscar tarefa</label>
                     <input
@@ -35,6 +36,17 @@
 
                 <fieldset>
                     <legend>Filtrar por status</legend>
+
+                    <div>
+                        <input
+                            type="radio"
+                            id="status-todos"
+                            name="status"
+                            value="todos"
+                            checked
+                        >
+                        <label for="status-todos">Todos</label>
+                    </div>
 
                     <div>
                         <input
@@ -77,7 +89,64 @@
                     </div>
                 </fieldset>
 
-                <button type="submit">Buscar</button>
+                <fieldset>
+                    <legend>Filtrar por prioridade</legend>
+
+                    <div>
+                        <input
+                            type="radio"
+                            id="prioridade-todas"
+                            name="prioridade"
+                            value="todas"
+                            checked
+                        >
+                        <label for="prioridade-todas">Todas</label>
+                    </div>
+
+                    <div>
+                        <input
+                            type="radio"
+                            id="prioridade-alta"
+                            name="prioridade"
+                            value="alta"
+                        >
+                        <label for="prioridade-alta">Alta</label>
+                    </div>
+
+                    <div>
+                        <input
+                            type="radio"
+                            id="prioridade-media"
+                            name="prioridade"
+                            value="media"
+                        >
+                        <label for="prioridade-media">Média</label>
+                    </div>
+
+                    <div>
+                        <input
+                            type="radio"
+                            id="prioridade-baixa"
+                            name="prioridade"
+                            value="baixa"
+                        >
+                        <label for="prioridade-baixa">Baixa</label>
+                    </div>
+                </fieldset>
+
+                <div>
+                    <label for="ordenacao">Ordenar por prazo</label>
+
+                    <select id="ordenacao" name="ordenacao">
+                        <option value="prazo-asc">Prazo: mais próximo</option>
+                        <option value="prazo-desc">Prazo: mais distante</option>
+                    </select>
+                </div>
+
+                <button type="button" id="limpar-filtros">
+                    Limpar filtros
+                </button>
+
             </form>
         </section>
 
@@ -88,22 +157,22 @@
 
                 <section aria-labelledby="status-afazer">
                     <h3 id="status-afazer">A fazer</h3>
-                    <ul></ul>
+                    <ul data-lista="a_fazer"></ul>
                 </section>
 
                 <section aria-labelledby="status-andamento">
                     <h3 id="status-andamento">Em andamento</h3>
-                    <ul></ul>
+                    <ul data-lista="em_andamento"></ul>
                 </section>
 
                 <section aria-labelledby="status-revisao">
                     <h3 id="status-revisao">Em revisão</h3>
-                    <ul></ul>
+                    <ul data-lista="em_revisao"></ul>
                 </section>
 
                 <section aria-labelledby="status-concluida">
                     <h3 id="status-concluida">Concluída</h3>
-                    <ul></ul>
+                    <ul data-lista="concluida"></ul>
                 </section>
 
             </div>
@@ -120,4 +189,3 @@
 
 </body>
 </html>
-

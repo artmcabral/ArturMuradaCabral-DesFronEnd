@@ -1,7 +1,4 @@
-import { renderizarTarefas } from "./renderizacao.js";
-
-export function renderizarEstado(estado, dados) {
-    const quadro = document.querySelector(".quadro-tarefas");
+export function renderizarEstado(estado, mensagem) {
     const regiaoStatus = document.querySelector("[data-estado]");
 
     if (estado === "carregando") {
@@ -9,9 +6,8 @@ export function renderizarEstado(estado, dados) {
         return;
     }
 
-    if (estado === "sucesso") {
-        regiaoStatus.textContent = `${dados.length} tarefas carregadas.`;
-        renderizarTarefas(dados, quadro);
+    if (estado === "erro") {
+        regiaoStatus.textContent = mensagem;
         return;
     }
 
@@ -20,7 +16,5 @@ export function renderizarEstado(estado, dados) {
         return;
     }
 
-    if (estado === "erro") {
-        regiaoStatus.textContent = dados;
-    }
+    regiaoStatus.textContent = mensagem;
 }
