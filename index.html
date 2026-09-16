@@ -116,45 +116,7 @@
         <p>Artur Murada</p>
     </footer>
 
-    <script type="module">
-        import { carregarTarefas } from "./js/api.js";
-        import { renderizarEstado } from "./js/estados.js";
-
-        async function iniciar() {
-            renderizarEstado("carregando", []);
-
-            try {
-                const tarefas = await carregarTarefas();
-
-                if (tarefas.length === 0) {
-                    renderizarEstado("vazio", []);
-                    return;
-                }
-
-                renderizarEstado("sucesso", tarefas);
-
-            } catch (erro) {
-                if (erro.name === "TypeError") {
-                    renderizarEstado(
-                        "erro",
-                        "Não foi possível carregar as tarefas. Verifique sua conexão."
-                    );
-                } else if (erro.name === "SyntaxError") {
-                    renderizarEstado(
-                        "erro",
-                        "Não foi possível carregar as tarefas porque o arquivo possui um formato inválido."
-                    );
-                } else {
-                    renderizarEstado(
-                        "erro",
-                        "Não foi possível carregar as tarefas."
-                    );
-                }
-            }
-        }
-
-        iniciar();
-    </script>
+    <script type="module" src="./js/main.js"></script>
 
 </body>
 </html>
